@@ -48,9 +48,43 @@
 <body>
     <div class="container">
         <h1>Dice Roller</h1>
-        <img src="./images/dice.png" alt="Dice" class="dice-img">
-        <button type="button" class="btn">Roll Dice</button>
-        <p class="text">Click the button to roll the dice!</p>
+        <img src="./images/dice.png" alt="Dice" class="dice-img" id="dice">
+        <button type="button" class="btn" onclick="diceRoller()">Roll Dice</button>
+        <p class="text" id="para">Click the button to roll the dice!</p>
     </div>
+
+    <script>
+        function diceRoller(){
+            const min=1;
+            const max=6;
+            const random=Math.floor(Math.random()*(max-min+1))+min;
+            const diceImg=document.getElementById("dice");
+            const textElement=document.getElementById("para");
+            if(random==1){
+                diceImg.src="./images/one.png";
+                textElement.innerText="You rolled at 1!"
+            }
+            else if(random==2){
+                diceImg.src="./images/two.png";
+                textElement.innerText="You rolled at 2!";
+            }
+            else if(random==3){
+                diceImg.src="./images/three.png";
+                textElement.innerText="You rolled at 3!";
+            }
+            else if(random==4){
+                diceImg.src="./images/four.png";
+                textElement.innerText="You rolled at 4!";
+            }
+            else if(random==5){
+                diceImg.src="./images/five.png";
+                textElement.innerText="You rolled at 5!";
+            }
+            else{
+                diceImg.src="./images/six.png";
+                textElement.innerText="You rolled at 6!";
+            }
+        }
+    </script>
 </body>
 </html>
